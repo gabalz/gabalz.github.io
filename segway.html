@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>Segway Simulator</title>
+    <link rel="stylesheet" href="gbalazs.css">
+</head>
+<body>
+    <h2>Robot Segway Simulator</h2>
+
+    Source code: <a href="https://github.com/gabalz/segway">
+                    https://github.com/gabalz/segway</a>
+    <br/>
+
+    <tr> <td> <p style="text-align:justify">
+    The simulator was developed by
+    <a href="http://webdocs.cs.ualberta.ca/~gbalazs/">
+       G&aacute;bor Bal&aacute;zs</a>
+    during his teaching assistantship for the Experimental Mobile Robotics course of
+    <a href="http://www.cs.ualberta.ca/~szepesva/">Csaba Szepesv&aacute;ri</a>
+    in 2011-2012. The goal of the course was to teach system identification,
+    the basics of control and robot localization by particle filtering based
+    on known terrain maps.
+    </p> </tr>
+    <tr> <td>
+    <a href="pic/segway-robot-large.jpg">
+        <img class="right" src="pic/segway-robot-small.jpg" alt="LEGO robot segway">
+    </a>
+    <p style="text-align:justify">
+    In the simulator, one can control a robot segway on a flat terrain.
+    The design of the robot is based on the
+    <a href="http://www.hitechnic.com/blog/gyro-sensor/htway/">
+       HiTechnic HTWay robot</a> built using the
+    <a href="http://en.wikipedia.org/wiki/Lego_Mindstorms_NXT">
+       LEGO Mindstorms NXT</a> kit.
+    The robot is equipped with a
+    <a href="http://www.hitechnic.com/cgi-bin/commerce.cgi?preadd=action&key=NGY1044">
+       HiTechnic gyroscope</a> sensor,
+    two <a href="http://www.philohome.com/nxtmotor/nxtmotor.htm">
+           LEGO NXT motors</a>
+    and three <a href="http://www.mindsensors.com/index.php?module=pagemaster&PAGE_user_op=view_page&PAGE_id=72">
+                 Mindsensors DIST-Nx</a>
+    medium range infrared (IR) distance sensors.
+    In the simulator, the gyroscope is modeled as a
+    <a href="https://github.com/gabalz/segway/blob/master/doc/rategyro-model/rategyro-model.pdf?raw=true">
+       rate gyroscope</a>.
+    The <a href="https://github.com/gabalz/segway/blob/master/doc/segway-model/segway-model.pdf?raw=true">
+           motion dynamics</a> of the robot is derived based on the
+    Euler-Lagrange equations using DC motor dynamics.
+    These differential equations are approximately solved by a fourth-order
+    <a href="http://en.wikipedia.org/wiki/Runge%E2%80%93Kutta_methods">
+       Runge-Kutta method</a>.
+    The distance sensors are simulated by making the true distance values
+    noisy using a Gaussian distribution. In real, the accuracy of this IR
+    sensor model is reasonable only on the 5-35cm range. So we cut down the
+    sensor readings in the simulator too to provide the same challenges for
+    particle filtering.
+    </p> </tr>
+    <tr> <td>
+    <p style="text-align:justify">
+    The controller is split to robot and PC parts, which communicate with
+    each other by message passing. Such a communication scheme (via Bluetooth)
+    is necessary for the real robot as the
+    <a href="http://en.wikipedia.org/wiki/Lego_Mindstorms_NXT#NXT_Intelligent_Brick">
+       NXT brick</a> cannot perform computationally expensive tasks,
+    such as particle filtering. Hence, the simulator implements such a message
+    passing scheme, making it easier to adapt controllers for the real robot
+    later.
+    </p> </tr>
+    <tr> <td>
+    <a href="pic/segway-loc-large.png">
+        <img class="right" src="pic/segway-loc-small.png" alt="Segway localization">
+    </a>
+    <p style="text-align:justify">
+    The robot part of the controller is an adaptation of the
+    <a href="http://www.hitechnic.com/blog/gyro-sensor/htway/">
+       HiTechnic HTWAY</a>
+    <a href="http://en.wikipedia.org/wiki/PID_controller">
+       PID controller</a>.
+    This can track the user input and drive around the robot on a flat terrain
+    among boxes (no collision detection). Meanwhile, the PC part might localize
+    the position of the robot based on the IR sensor measurements
+    and the knowledge of the map using a
+    <a href="http://papers.nips.cc/paper/1998-kld-sampling-adaptive-particle-filters.pdf">
+       KLD-sampling</a> adaptive particle filter.
+    The simulator has 3D visualization with <a href="https://www.opengl.org/">OpenGL</a>
+    showing the position and orientation of the robot from a changeable camera view.
+    When particle filtering is performed, the locations of the particles are
+    also shown with their likelihood (lighter is more likely). In this case,
+    the IR sensor readings (green) and the related values of the most likely
+    particle (red) are plotted at the bottom of the screen.
+    Furthermore, the top left corner presents the elapsed time in seconds
+    and the (adaptive) number of particles (N).
+    </p> </tr>
+    <tr> <td>
+    <p style="text-align:justify">
+    The following videos demonstrate particle filter based localization:
+    <a href="https://www.youtube.com/watch?list=UUfepcWvMLYohlE3pQmoJdVA&feature=player_detailpage&v=sqT0g8xDnuk">
+       video 1</a>,
+    <a href="https://www.youtube.com/watch?feature=player_detailpage&list=UUfepcWvMLYohlE3pQmoJdVA&v=VQd_iYPMSpU">
+       video 2</a>
+    and
+    <a href="https://www.youtube.com/watch?list=UUfepcWvMLYohlE3pQmoJdVA&feature=player_detailpage&v=2-XyWsjcGxg">
+       video 3</a>.
+    They were recorded using the real robot, but it looks the same in the
+    simulator, except there the robot's true position is shown
+    (in real this information is not available, so on the videos
+     the most likely particle is shown instead).
+    The "Searching..." phase at the beginning searches through all
+    positions and orientations (yaw angle only, the pitch angle is assumed to
+    be close to zero, i.e., robot is close to vertical), and keeps the 10,000
+    most likely configurations (particles) to initialize the filter.
+    </p> </tr>
+</body>
+</html>
