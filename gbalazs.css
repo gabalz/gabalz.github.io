@@ -24,7 +24,13 @@ img.icon {
     width: auto;
     height: 1em;
 }
-
+img.right-icon {
+    border: 0;
+    width: auto;
+    height: 1em;
+    float: right;
+    padding: 0.3em;
+}
 img.right {
     float: right;
     padding: 1em;
