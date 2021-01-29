@@ -6,52 +6,113 @@
           content="Gabor,Balazs,G&aacute;bor,Bal&aacute;zs,home,cv"/>
     <link rel="stylesheet" href="gabalz.css">
     <link rel="shortcut icon" type="image/x-icon" href="gabalz.github.io/favicon.ico" />
+    <script type="text/javascript">
+        var illustration_landscape = [
+            "turtle", "gecko"
+        ];
+        function getLandscapeIllustrationTag() {
+            var randomIndex = Math.floor(Math.random() * illustration_landscape.length);
+            var tag = '<a href=\"illustration/';
+            tag += illustration_landscape[randomIndex];
+            tag += '_large.jpg\"><img class=\"left\" src=\"illustration/';
+            tag += illustration_landscape[randomIndex];
+            tag += '_small.jpg\" alt=\"illustration_landscape\"></a>';
+            return tag
+        }
+    </script>
 </head>
 <body>
 <tr>
     <td>
-    <br/>
     <a href="https://my.olympus-consumer.com/members/gabalz">
       <img class="right-icon" src="pic/icon_photos_32x32.png" alt="[photos]" title="photos"/>
     </a>
+    <!--
+    <a href="https://publons.com/researcher/3634407/gabor-balazs">
+      <img class="right-icon" src="pic/icon_publons_32x32.png" alt="[publons]" title="publons"/>
+    </a>
+    -->
     <a href="https://www.linkedin.com/in/gabalz/">
       <img class="right-icon" src="pic/icon_linkedin_32x32.png" alt="[linkedin]" title="LinkedIn"/>
     </a>
     <a href="https://www.researchgate.net/profile/Gabor_Balazs6">
       <img class="right-icon" src="pic/icon_researchgate_32x32.png" alt="[researchgate]" title="ResearchGate"/>
     </a>
+    <a href="https://scholar.google.com/citations?user=Up-MXgMAAAAJ">
+      <img class="right-icon" src="pic/icon_google_scholar_32x32.png" alt="[google scholar]" title="google scholar"/>
+    </a>
     <a href="https://github.com/gabalz">
       <img class="right-icon" src="pic/icon_github_32x32.png" alt="[github]" title="github"/>
+    </a>
+    <a href="https://www.dropbox.com/s/zbf3zp6prmcakor/gabalz-cv.pdf?dl=0">
+      <img class="right-icon" src="pic/icon_pdf_32x32.png" alt="[CV]" title="CV"/>
     </a>
     <h2>G&aacute;bor Bal&aacute;zs</h2>
     gabalz {at) gmail [dot} com<br/>
 </tr>
 <tr>
     <td> <br/>
-    <a href="pic/illustration-large.jpg">
-        <img class="right" src="pic/illustration-small.jpg" alt="illustration">
+    <a href="illustration/cat_moon_large.jpg">
+    <img class="right" src="illustration/cat_moon_small.jpg" alt="illustration_portrait">
     </a>
     <p style="text-align:justify">
-    I am a computer scientist interested in machine learning applications and research.
-    I received my PhD in Statistical Machine Learning
-    at the <a href="https://www.ualberta.ca/">University of Alberta</a>
+    I am a computer scientist interested in machine learning applications and research,
+    especially in convex regression, mathematical optimization, and sequential decesion making.
+    I received my MSc at the <a href="https://www.inf.elte.hu/en">E&ouml;tv&ouml;s L&oacute;r&aacute;nd University</a>, and my PhD in Statistical Machine Learning
+    at the <a href="https://www.ualberta.ca/computing-science">University of Alberta</a>
     under the supervision of
     <a href="http://www.cs.ualberta.ca/~szepesva/">Csaba Szepesv&aacute;ri</a>
     and
     <a href="http://www.cs.ualberta.ca/~dale/">Dale Schuurmans</a>.
-    Currently I work as a Quantitative Analyst
-    for <a href="http://www.causality-group.com/">Causality Group</a>
-    in Madrid, Spain.
     </p>
-    <p>
-    My wife Gema is a <a href="https://www.amazon.com/author/gemasnchez">writer</a>, a <a href="https://coachingonlinemarianagema.com">coach</a> and a <a href="https://amapolaolaclown.wordpress.com">clown</a>.
+
+    <script type="text/javascript">
+        document.write(getLandscapeIllustrationTag());
+    </script>
+    <p style="text-align:justify">
+    Currently I am a freelancer, working on machine learning research,
+    market-neutral equity trading for <a href="http://www.causality-group.com/">Causality Group</a>,
+    and wastewater treatment plant optimization for
+    <a href="http://www.kaveczki.hu">KaveczkiTerv</a>.
+    I live in Puerto de Mazarron (Spain) with my wife <a href="https://gemasanchezhernandez.wordpress.com">Gema</a> who is 
+    a <a href="https://www.amazon.com/author/gemasnchez">writer</a>.
     </p>
     </td>
 </tr>
 <tr>
     <td>
     <hr>
-    <h3>Papers</h3>
+    <h3>Publications</h3>
+    <ul>
+        <li>Convex regression: theory, practice, and applications,
+            <br/>G&aacute;bor Bal&aacute;zs,
+                 PhD thesis, University of Alberta, 2016,
+                 <a href="https://era.library.ualberta.ca/files/c7d278t254/Balazs_Gabor_201609_PhD.pdf">
+                   <img class="icon" src="pic/icon_pdf_32x32.png" alt="[pdf]" title="pdf"/>
+                 </a>
+        </li>
+        </br>
+        <li>Near-optimal max-affine estimators for convex regression,
+            <br/>G&aacute;bor Bal&aacute;zs,
+                 <a href="http://www.szit.bme.hu/~gya/">Andr&aacute;s Gy&ouml;rgy</a>,
+                 <a href="http://www.cs.ualberta.ca/~szepesva/">Csaba Szepesv&aacute;ri</a>,
+                 AISTATS 2015,
+                 <a href="http://jmlr.org/proceedings/papers/v38/balazs15.html">
+                   <img class="icon" src="pic/icon_link_32x32.png" alt="[link]" title="link"/>
+                 </a>
+                 <a href="http://jmlr.org/proceedings/papers/v38/balazs15.pdf">
+                   <img class="icon" src="pic/icon_pdf_32x32.png" alt="[pdf]" title="pdf"/>
+                 </a>
+                 <a href="http://jmlr.org/proceedings/papers/v38/balazs15-supp.zip">
+                   <img class="icon" src="pic/icon_supp_32x32.png" alt="[supplement]" title="supplement"/>
+                 </a>
+        </li>
+    </ul>
+</tr>
+<tr>
+    <td>
+    <hr>
+    <h3>Technical Reports</h3>
     <ul>
         <li>Max-affine estimators for convex stochastic programming,
             <br/>G&aacute;bor Bal&aacute;zs,
@@ -76,27 +137,11 @@
                  </a>
         </li>
         </br>
-        <li>Convex regression: theory, practice, and applications,
+        <li>Cascade-Correlation Neural Networks: A Survey,
             <br/>G&aacute;bor Bal&aacute;zs,
-                 PhD thesis, University of Alberta, 2016,
-                 <a href="https://era.library.ualberta.ca/files/c7d278t254/Balazs_Gabor_201609_PhD.pdf">
+                 UofA Technical Report 2009,
+                 <a href="https://papersdb.cs.ualberta.ca/~papersdb/uploaded_files/1033/additional_ccnnsurvey2009.pdf">
                    <img class="icon" src="pic/icon_pdf_32x32.png" alt="[pdf]" title="pdf"/>
-                 </a>
-        </li>
-        </br>
-        <li>Near-optimal max-affine estimators for convex regression,
-            <br/>G&aacute;bor Bal&aacute;zs,
-                 <a href="http://www.szit.bme.hu/~gya/">Andr&aacute;s Gy&ouml;rgy</a>,
-                 <a href="http://www.cs.ualberta.ca/~szepesva/">Csaba Szepesv&aacute;ri</a>,
-                 AISTATS 2015,
-                 <a href="http://jmlr.org/proceedings/papers/v38/balazs15.html">
-                   <img class="icon" src="pic/icon_link_32x32.png" alt="[link]" title="link"/>
-                 </a>
-                 <a href="http://jmlr.org/proceedings/papers/v38/balazs15.pdf">
-                   <img class="icon" src="pic/icon_pdf_32x32.png" alt="[pdf]" title="pdf"/>
-                 </a>
-                 <a href="http://jmlr.org/proceedings/papers/v38/balazs15-supp.zip">
-                   <img class="icon" src="pic/icon_supp_32x32.png" alt="[supplement]" title="supplement"/>
                  </a>
         </li>
     </ul>

@@ -21,18 +21,26 @@ a:active  { text-decoration: underline; }
 
 img.icon {
     border: 0;
-    width: auto;
-    height: 1em;
+    width: 1.1em;
+    height: 1.1em;
+}
+img.left {
+    float: left;
+    padding: 0em;
+    padding-right: 1em;
 }
 img.right-icon {
     border: 0;
-    width: auto;
-    height: 1em;
+    width: 1.1em;
+    height: 1.1em;
     float: right;
-    padding: 0.3em;
+    padding: 0.5em;
+    padding-top: 0em;
+    padding-bottom: 0em;
 }
 img.right {
     float: right;
-    padding: 1em;
+    padding: 0em;
+    padding-left: 1em;
 }
 
