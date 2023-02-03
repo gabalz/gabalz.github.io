@@ -8,6 +8,20 @@
     <link rel="stylesheet" href="gabalz.css">
     <link rel="shortcut icon" type="image/x-icon" href="gabalz.github.io/favicon.ico" />
     <script>
+        var illustration_portrait = [
+            "cat_moon", "la_union"
+        ];
+        function getPortraitIllustrationTag() {
+            var randomIndex = Math.floor(Math.random() * illustration_portrait.length);
+            var tag = '<a href=\"illustration/';
+            tag += illustration_portrait[randomIndex];
+            tag += '_large.jpg\"><img class=\"right\" src=\"illustration/';
+            tag += illustration_portrait[randomIndex];
+            tag += '_small.jpg\" alt=\"illustration_portrait\"></a>';
+            return tag
+        }
+    </script>
+    <script>
         var illustration_landscape = [
             "turtle", "gecko"
         ];
@@ -55,9 +69,9 @@
 </tr>
 <tr>
     <td> <br/>
-    <a href="illustration/cat_moon_large.jpg">
-    <img class="right" src="illustration/cat_moon_small.jpg" alt="illustration_portrait">
-    </a>
+    <script>
+        document.write(getPortraitIllustrationTag());
+    </script>
     <p style="text-align:justify">
     I am a computer scientist interested in machine learning applications and research,
     especially in convex regression, mathematical optimization, and sequential decision making.
